@@ -9,7 +9,7 @@
   <!-- Minimal SEO -->
   <link rel="canonical" href="https://example.com/" />
 
-  <title>Build with AI Academy — Coming Soon</title>
+  <title>Build with AI Academy - Coming Soon</title>
   <meta name="description" content="Build with AI Academy is launching soon. Learn, build, and ship with AI." />
 
   <!-- Fonts -->
@@ -23,15 +23,15 @@
   <style>
     :root{
       --bg:#ffffff;
-      --ink:#0f172a;               /* slate-900 */
+      --ink:#0f172a;
       --muted:rgba(15,23,42,.70);
       --line:rgba(2,6,23,.10);
       --card:rgba(255,255,255,.72);
       --shadow: 0 24px 80px rgba(2,6,23,.12);
 
-      --a: #2563eb;                /* blue-600 */
-      --b: #f59e0b;                /* amber-500 */
-      --c: #22c55e;                /* green-500 */
+      --a: #2563eb;
+      --b: #f59e0b;
+      --c: #22c55e;
     }
 
     *{ box-sizing:border-box; }
@@ -137,7 +137,7 @@
     @keyframes floatUp { 50%{ transform: translateY(-6px);} }
     @keyframes floatDown { 50%{ transform: translateY(6px);} }
 
-    /* Brand image (inline SVG) */
+    /* Brand image (PNG) */
     .brandLogo{
       width:min(560px, 100%);
       filter: drop-shadow(0 10px 18px rgba(2,6,23,.10));
@@ -153,77 +153,34 @@
       letter-spacing:-0.02em;
     }
 
-    .sub{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.7;
-      max-width: 56ch;
-    }
-
-    .pillRow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:6px;
-    }
-
-    .pill{
-      font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size:12px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(2,6,23,.12);
-      background: rgba(255,255,255,.72);
-      color: rgba(15,23,42,.86);
-      user-select:none;
-    }
-
     /* === Logo column === */
     .orbit{
       display:grid;
       place-items:center;
     }
 
-    .orbWrap{
-      width:clamp(220px, 34vw, 380px);
-      aspect-ratio:1;
-      border-radius:26px;
-      position:relative;
-      display:grid;
-      place-items:center;
-      background:
-        radial-gradient(120px 120px at 30% 25%, rgba(37,99,235,.14), transparent 70%),
-        radial-gradient(120px 120px at 70% 30%, rgba(245,158,11,.14), transparent 70%),
-        radial-gradient(140px 140px at 55% 75%, rgba(34,197,94,.10), transparent 75%),
-        linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.55));
-      border:1px solid rgba(2,6,23,.10);
-      box-shadow:
-        0 24px 70px rgba(2,6,23,.14),
-        inset 0 0 0 1px rgba(255,255,255,.55);
-      animation: floatDown 5.2s ease-in-out infinite;
-      will-change: transform;
-      transform: translateZ(0);
-    }
+	.orbWrap{
+	  width:clamp(220px, 34vw, 380px);
+	  aspect-ratio:1;
+	  border-radius:26px;
+	  position:relative;
+	  display:grid;
+	  place-items:center;
+	  background:none;
+	  border:none;
+	  box-shadow:none;
+	  animation: floatDown 5.2s ease-in-out infinite;
+	}
 
-    .orbWrap::before{
-      content:"";
-      position:absolute;
-      inset:12px;
-      border-radius:18px;
-      border:1px dashed rgba(2,6,23,.14);
-      opacity:.55;
-      pointer-events:none;
-    }
+    /* Logo image with border */
+	.hero{
+	  width:78%;
+	  height:78%;
+	  object-fit:contain;
+	  border:2px solid rgba(2,6,23,.18);
+	  border-radius:16px;
+	}
 
-    .hero{
-      width:78%;
-      height:78%;
-      object-fit:contain;
-      filter: drop-shadow(0 16px 28px rgba(2,6,23,.18));
-      position:relative;
-      z-index:1;
-    }
 
     /* Footer */
     .footer{
@@ -253,20 +210,6 @@
       color:var(--muted);
     }
 
-    .pulse{
-      width:9px;
-      height:9px;
-      border-radius:50%;
-      background: linear-gradient(180deg, var(--a), var(--b));
-      box-shadow: 0 0 0 0 rgba(37,99,235,.25);
-      animation: ping 1.6s ease-out infinite;
-    }
-    @keyframes ping{
-      0%{ box-shadow: 0 0 0 0 rgba(37,99,235,.25); }
-      70%{ box-shadow: 0 0 0 10px rgba(37,99,235,0); }
-      100%{ box-shadow: 0 0 0 0 rgba(37,99,235,0); }
-    }
-
     .links{
       display:flex;
       gap:10px;
@@ -283,7 +226,6 @@
       text-decoration:none;
       font-size:13px;
       white-space:nowrap;
-
       transform: translateZ(0);
       transition:
         transform 180ms ease,
@@ -316,8 +258,7 @@
 
     .chip:active{
       transform: translateY(0px) scale(0.98);
-      box-shadow:
-        0 8px 18px rgba(2,6,23,.10);
+      box-shadow: 0 8px 18px rgba(2,6,23,.10);
     }
 
     .sig{
@@ -340,7 +281,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){
-      .brandLogo, .orbWrap, .pulse{ animation: none !important; }
+      .brandLogo, .orbWrap{ animation: none !important; }
       #dotCanvas{ display:none; }
       .chip{ transition:none !important; }
     }
@@ -362,40 +303,10 @@
     <section class="frame" aria-label="Build with AI Academy coming soon">
       <div class="content">
         <div class="brand">
-          <!-- Brand image (SVG wordmark) -->
-          <svg class="brandLogo" viewBox="0 0 920 210" role="img" aria-label="Build with AI Academy">
-            <defs>
-              <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#2563eb"/>
-                <stop offset="0.55" stop-color="#f59e0b"/>
-                <stop offset="1" stop-color="#22c55e"/>
-              </linearGradient>
-              <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="rgba(2,6,23,.12)"/>
-              </filter>
-            </defs>
-
-            <!-- Mark -->
-            <g filter="url(#soft)">
-              <rect x="10" y="18" width="96" height="96" rx="22" fill="url(#g)" opacity="0.95"/>
-              <path d="M43 88V44h20c14 0 22 7 22 18 0 12-8 18-22 18H43Zm16-12h4c7 0 10-3 10-8 0-5-3-8-10-8h-4v16Z"
-                    fill="#ffffff" opacity="0.95"/>
-              <circle cx="58" cy="158" r="10" fill="#2563eb" opacity="0.25"/>
-              <circle cx="92" cy="164" r="6" fill="#f59e0b" opacity="0.25"/>
-              <circle cx="74" cy="184" r="7" fill="#22c55e" opacity="0.20"/>
-            </g>
-
-            <!-- Wordmark -->
-            <g font-family="Space Grotesk, system-ui, sans-serif" fill="#0f172a">
-              <text x="132" y="92" font-size="62" font-weight="600" letter-spacing="-0.02em">Build with AI</text>
-              <text x="132" y="154" font-size="50" font-weight="500" letter-spacing="-0.01em" opacity="0.92">Academy</text>
-              <path d="M132 170h560" stroke="rgba(2,6,23,.12)" stroke-width="4" stroke-linecap="round"/>
-              <path d="M132 170h240" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
-            </g>
-          </svg>
+          <!-- Brand text image -->
+          <img class="brandLogo" src="logotext.png" alt="Build with AI Academy" />
 
           <h1 class="headline">Teaching you to build websites and apps using AI</h1>
-
         </div>
 
         <div class="orbit">
@@ -408,18 +319,16 @@
 
       <div class="footer">
         <div class="footer-left">
-          <div class="footer-soon">
-            Coming soon
-          </div>
+          <div class="footer-soon">Coming soon</div>
 
-          <!-- Social media links (replace hrefs with your real URLs) -->
+          <!-- Social media links -->
           <div class="links" aria-label="Social links">
             <a class="chip" href="#" target="_blank" rel="noopener">YouTube</a>
             <a class="chip" href="#" target="_blank" rel="noopener">Instagram</a>
-            <a class="chip" href="#" target="_blank" rel="noopener">LinkedIn</a>  
+            <a class="chip" href="#" target="_blank" rel="noopener">LinkedIn</a>
             <a class="chip" href="#" target="_blank" rel="noopener">TikTok</a>
             <a class="chip" href="#" target="_blank" rel="noopener">GitHub</a>
-			<a class="chip" href="#" target="_blank" rel="noopener">X</a>
+            <a class="chip" href="#" target="_blank" rel="noopener">X</a>
           </div>
         </div>
 
@@ -457,9 +366,9 @@
       function rand(min, max){ return Math.random() * (max - min) + min; }
 
       const palette = [
-        [37, 99, 235],   // blue
-        [245, 158, 11],  // amber
-        [34, 197, 94]    // green
+        [37, 99, 235],
+        [245, 158, 11],
+        [34, 197, 94]
       ];
 
       function spawn(offscreen = false){
@@ -473,9 +382,10 @@
           if (side === 3) { x = rand(0, w); y = h + 30; }
         }
 
-        const [r,g,b] = palette[Math.floor(rand(0, palette.length))];
+        const pick = palette[Math.floor(rand(0, palette.length))];
+        const r = pick[0], g = pick[1], b = pick[2];
 
-        const speed = rand(6, 22); // gentle drift
+        const speed = rand(6, 22);
         const angle = rand(-Math.PI, Math.PI);
         const vx = Math.cos(angle) * speed;
         const vy = Math.sin(angle) * speed;
@@ -503,7 +413,6 @@
 
         ctx.clearRect(0, 0, w, h);
 
-        // very light veil to keep motion silky on white
         ctx.fillStyle = "rgba(255,255,255,0.22)";
         ctx.fillRect(0, 0, w, h);
 
@@ -513,7 +422,6 @@
           d.x += d.vx * dt;
           d.y += d.vy * dt;
 
-          // respawn when offscreen
           if (d.x < -60 || d.x > w + 60 || d.y < -60 || d.y > h + 60){
             dots[i] = spawn(true);
             continue;
@@ -523,7 +431,6 @@
           const tw = 0.6 + 0.4 * Math.sin(d.ph * 2.8);
           const alpha = d.a * tw;
 
-          // glow
           const grad = ctx.createRadialGradient(d.x, d.y, 0, d.x, d.y, d.rad * 7);
           grad.addColorStop(0, `rgba(${d.c.r},${d.c.g},${d.c.b},${alpha})`);
           grad.addColorStop(1, `rgba(${d.c.r},${d.c.g},${d.c.b},0)`);
@@ -533,7 +440,6 @@
           ctx.arc(d.x, d.y, d.rad * 7, 0, Math.PI * 2);
           ctx.fill();
 
-          // core
           ctx.beginPath();
           ctx.fillStyle = `rgba(${d.c.r},${d.c.g},${d.c.b},${Math.min(0.25, alpha * 1.8)})`;
           ctx.arc(d.x, d.y, d.rad, 0, Math.PI * 2);
